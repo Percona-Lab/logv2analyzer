@@ -321,7 +321,8 @@ def main():
                     print(f"  {usage['path']}:{usage['line_number']}")
 
         print("Summary:")
-        print(f"Log IDs range: [{args.range[0]}, {args.range[1]})")
+        if args.range:
+            print(f"Log IDs range: [{args.range[0]}, {args.range[1]})")
         print(f"Found {len(results['usages'])} log ID usages.")
         if args.duplicates:
             print(f"Found {len(results['duplicates'])} duplicate log ID usages.")
